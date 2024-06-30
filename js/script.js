@@ -17,37 +17,48 @@ document.addEventListener('DOMContentLoaded', (event) => {
         });
     }
 
-    function addYoursEventListener(yours) {
-        yours.addEventListener('click', (event) => {
-            event.stopPropagation(); 
-    
-            const yoursAll = document.querySelectorAll(".yours");
-            yoursAll.forEach(element => {
-                if (element !== yours) {
+    function addTitleEventListener(title) {
+        title.addEventListener('click', (event) => {
+            event.stopPropagation();
+
+            const allTitles = document.querySelectorAll(".title h6");
+            allTitles.forEach(element => {
+                if (element !== title) {
                     element.classList.remove("selected");
+                    const icon = element.querySelector('i');
+                    if (icon) {
+                        icon.remove();
+                    }
                 }
             });
-    
-            const isSelected = yours.classList.contains("selected");
-    
+
+            const isSelected = title.classList.contains("selected");
+
             if (isSelected) {
-                yours.classList.remove("selected");
+                title.classList.remove("selected");
+                const icon = title.querySelector('i');
+                if (icon) {
+                    icon.remove();
+                }
                 const selection = document.getElementById("select-container");
-                selection.innerHTML = '';
+                selection.innerHTML = `<div class="box">
+                                            <img src="">
+                                            <div class="title">
+                                                <h6>Seleziona il tuo album cliccando sul nome</h6>
+                                            </div>
+                                        </div>`;
             } else {
-                yours.classList.add("selected");
-                console.log("ciao");
-    
-                const box = yours.closest('.box');
-    
+                title.classList.add("selected");
+                const icon = document.createElement('i');
+                icon.classList.add('fa-solid', 'fa-star');
+                title.appendChild(icon);
+
+                const box = title.closest('.box');
                 const clonedBox = box.cloneNode(true);
                 clonedBox.classList.remove('active');
-    
+
                 const selection = document.getElementById("select-container");
                 selection.innerHTML = '';
-                const h3 = document.createElement("h3");
-                h3.textContent = "Il tuo album";
-                selection.appendChild(h3);
                 selection.appendChild(clonedBox);
             }
         });
@@ -56,10 +67,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const boxes = document.querySelectorAll('.box');
     boxes.forEach(box => {
         addBoxEventListener(box);
+        const title = box.querySelector('.title h6');
+        addTitleEventListener(title);
     });
 
-    var val;
-    if (isNaN(val)) {
+    // Caricare il valore di val dal localStorage
+    var val = parseInt(localStorage.getItem('val'), 10);
+    if (isNaN(val) || val === 0) {
         val = 0;
     }
 
@@ -69,7 +83,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     function showSelectedAlbums() {
         const checkboxes = document.querySelectorAll('#checkbox input[type="checkbox"]');
         const selectedAlbums = [];
-        checkboxes.forEach((checkbox, index) => {
+        checkboxes.forEach((checkbox) => {
             if (checkbox.checked) {
                 selectedAlbums.push(checkbox.nextElementSibling.textContent);
             }
@@ -91,18 +105,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
             }
             h6.textContent = album;
 
-            const yours = document.createElement('div');
-            yours.classList.add("yours");
-            yours.innerHTML = '<i class="fa-solid fa-star"></i>'
-
             title.appendChild(h6);
             box.appendChild(img);
             box.appendChild(title);
-            box.appendChild(yours);
             container.appendChild(box);
 
             addBoxEventListener(box);
-            addYoursEventListener(yours);
+            addTitleEventListener(h6);
         });
         list();
     }
@@ -111,10 +120,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
         const list = document.querySelector(".list");
         list.classList.toggle("hidden");
     }
-    
+
     window.showSelectedAlbums = showSelectedAlbums;
     window.list = list;
-    window.number = number;
     window.add = add;
     window.remove = remove;
     window.selectAll = selectAll;
@@ -131,6 +139,7 @@ function add() {
 
     val++;
     h3.textContent = val;
+    localStorage.setItem('val', val);
 }
 
 function remove() {
@@ -138,6 +147,7 @@ function remove() {
 
     val--;
     h3.textContent = val;
+    localStorage.setItem('val', val);
 }
 
 function selectAll() {
@@ -155,7 +165,40 @@ function deselectAll() {
     });
 }
 
-window.onload = function(){
+window.onload = function() {
     showSelectedAlbums();
     list();
+    var storedVal = parseInt(localStorage.getItem('val'), 10);
+    if (!isNaN(storedVal) && storedVal !== 0) {
+        val = storedVal;
+        var h3 = document.getElementById("point");
+        h3.textContent = val;
+    }
+    const selection = document.getElementById("select-container");
+    selection.innerHTML = `<div class="box">
+                                <img src="">
+                                <div class="title">
+                                    <h6>Seleziona il tuo album cliccando sul nome</h6>
+                                </div>
+                            </div>`;
+}
+
+function en(){
+    const en = document.getElementById("en");
+    var ens = document.querySelectorAll(".en");
+
+    en.classList.toggle("online");
+    ens.forEach(element => {
+        element.classList.toggle("hidden");
+    });
+}
+
+function it(){
+    const it = document.getElementById("it");
+    var its = document.querySelectorAll(".it");
+
+    it.classList.toggle("online");
+    its.forEach(element => {
+        element.classList.toggle("hidden");
+    });
 }
