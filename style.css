@@ -1,0 +1,137 @@
+:root{
+    --primary-text:rgb(169, 77, 169);
+    --secondary-text:pink;
+    --primary-bg:cornsilk;
+    --secondary-bg:rgb(59, 6, 59);
+}
+body{
+    background-color: var(--primary-bg);
+    color: var(--primary-text);
+    font-family: "Comic Neue", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
+    margin: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.container{
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
+    row-gap: 75px;
+    max-width: 450px;
+}
+.box{
+    width: 100px;
+    height: 100px;
+    transition: .5s;
+    border-radius: 10px;
+    background-color: var(--secondary-bg);
+}
+.box:hover{
+    cursor: pointer;
+}
+.box img{
+    width: 100px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px var(--secondary-bg);
+}
+.box .title{
+    margin-top: -25px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.active{
+    transform:rotateX(-180deg);
+    transition: .5s;
+}
+.active .title{
+    margin-top: -85px;
+    transform:rotateX(-180deg);
+}
+.active img{
+    visibility: hidden;
+}
+button,select{
+    border-radius: 25px;
+    text-align: center;
+    padding: 5px 7.5px;
+    border: 0;
+    background-color: var(--secondary-text);
+    color: var(--primary-text);
+    cursor: pointer;
+    box-shadow: 0px 0px 10px var(--secondary-bg);
+}
+.submit{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
+#album{
+    width: 100px;
+    appearance: none;
+}
+.list{
+    position: absolute;
+    margin: 0;
+    width: 100%;
+    height: 425%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    z-index: 2;
+}
+.content{
+    position: absolute;
+    top: 50%;
+    background-color: var(--secondary-bg);
+    width: 250px;
+    padding: 50px;
+    border-radius: 10px;
+    margin-top: -125px;
+}
+#checkbox li{
+    display: flex;
+    justify-content: left;
+    text-align: left;
+    gap: 5px;
+    margin-left: -20px;
+    margin-top: -15px;
+}
+#checkbox h4{
+    text-transform: uppercase;
+}
+.hidden{
+    display: none;
+}
+.flex{
+    margin-top: -10px;
+    display: flex;
+    height: 40px;
+    line-height: 0;
+    border-radius: 25px;
+    box-shadow: 0px 0px 10px var(--secondary-bg);
+}
+.flex h3{
+    width: 50px;
+}
+.flex button{
+    box-shadow: 0px 0px 0px !important;
+    padding: 10px;
+    width: 50px;
+}
+.flex button:first-child{
+    border-radius: 25px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.flex button:last-child{
+    border-radius: 25px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}

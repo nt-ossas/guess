@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="img/logo.jpg"/>
+    <meta name="keywords" content="media, calcola, ossas, registro">
+    <meta name="description" content="Calcola la tua media con vari pesi dei voti">
+    <meta name="author" content="Ossas">
+    <meta name="theme-color" content="#1e1e1e">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+            integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+    <title>GUESS THE ALBUM!</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <h1>GUESS THE ALBUM!</h1>
+    <div>
+        <h3>Scegli il numero di album</h3>
+        <select id="album" onchange="number()">
+            <option value="15">15</option>
+            <option value="20">20</option>
+            <option value="25" selected>25</option>
+            <option value="30">30</option>
+            <option value="35">35</option>
+            <option value="40">40</option>
+            <option value="45">45</option>
+            <option value="50">50</option>
+        </select> 
+    </div>
+    <div>
+        <h3>Oppure scegli tu gli album dalla lista</h3>
+        <button onclick="list()">Visualizza lista</button>
+    </div>
+    <div>
+        <h3>Punteggio</h3>
+        <div class="flex">
+            <button onclick="remove()"><i class="fa-solid fa-minus"></i></button>
+            <h3 id="point">0</h3>
+            <button onclick="add()"><i class="fa-solid fa-plus"></i></button>
+        </div>
+    </div>
+    <div class="list hidden">
+        <div class="content">
+            <button class="submit" onclick="list()"><i class="fa-solid fa-xmark"></i></button>
+            <h3>Scegli gli album</h3>
+            <ul id="checkbox">
+                <li>
+                    <input type="checkbox">
+                    <h4>utopia</h4>
+                </li>
+                <li>
+                    <input type="checkbox">
+                    <h4>astroworld</h4>
+                </li>
+                <li>
+                    <input type="checkbox">
+                    <h4>rodeo</h4>
+                </li>
+                <li>
+                    <input type="checkbox">
+                    <h4>days before rodeo</h4>
+                </li>
+                <li>
+                    <input type="checkbox">
+                    <h4>dystopia</h4>
+                </li>
+                <li>
+                    <input type="checkbox">
+                    <h4>birbs in the trap sing mcknight</h4>
+                </li>
+                <li>
+                    <input type="checkbox">
+                    <h4>come over when your sober - pt 1</h4>
+                </li>
+                <li>
+                    <input type="checkbox">
+                    <h4>come over when your sober - pt 2</h4>
+                </li>
+                <li>
+                    <input type="checkbox">
+                    <h4>i am > i was</h4>
+                </li>
+                <li>
+                    <input type="checkbox">
+                    <h4>we don't trust you</h4>
+                </li>
+                <li>
+                    <input type="checkbox">
+                    <h4>we still don't trust you</h4>
+                </li>
+                <li>
+                    <input type="checkbox">
+                    <h4>17</h4>
+                </li>
+                <li>
+                    <input type="checkbox">
+                    <h4>?</h4>
+                </li>
+                <li>
+                    <input type="checkbox">
+                    <h4>goodbye & good riddance</h4>
+                </li>
+                <li>
+                    <input type="checkbox">
+                    <h4>so much fun</h4>
+                </li>
+                <li>
+                    <input type="checkbox">
+                    <h4>so much fun - deluxe</h4>
+                </li>
+                <li>
+                    <input type="checkbox">
+                    <h4>hereos & villans</h4>
+                </li>
+                <li>
+                    <input type="checkbox">
+                    <h4>damn.</h4>
+                </li>
+                <li>
+                    <input type="checkbox">
+                    <h4>ultraviolence - deluxe</h4>
+                </li>
+                <li>
+                    <input type="checkbox">
+                    <h4>did you know that there's a tunnel under the ocean blvd</h4>
+                </li>
+                <li>
+                    <input type="checkbox">
+                    <h4>savage mode</h4>
+                </li>
+                <li>
+                    <input type="checkbox">
+                    <h4>savage mode II</h4>
+                </li>
+                <li>
+                    <input type="checkbox">
+                    <h4>her loss</h4>
+                </li>
+                <li>
+                    <input type="checkbox">
+                    <h4>american dream</h4>
+                </li>
+                <li>
+                    <input type="checkbox">
+                    <h4>love sick</h4>
+                </li>
+                <li>
+                    <input type="checkbox">
+                    <h4>hardstone psyco</h4>
+                </li>
+            </ul>
+            <button class="submit" type="button" onclick="showSelectedAlbums()"><i class="fa-solid fa-check"></i></button>
+        </div>
+    </div>
+    <div class="container"></div>
+</body>
+</html>
