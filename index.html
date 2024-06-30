@@ -19,25 +19,8 @@
 </head>
 <body>
     <h1>GUESS THE ALBUM!</h1>
+    <button onclick="list()" class="choose">Scegli gli album</button>
     <div>
-        <h3>Scegli il numero di album</h3>
-        <select id="album" onchange="number()">
-            <option value="15">15</option>
-            <option value="20">20</option>
-            <option value="25" selected>25</option>
-            <option value="30">30</option>
-            <option value="35">35</option>
-            <option value="40">40</option>
-            <option value="45">45</option>
-            <option value="50">50</option>
-        </select> 
-    </div>
-    <div>
-        <h3>Oppure scegli tu gli album dalla lista</h3>
-        <button onclick="list()">Visualizza lista</button>
-    </div>
-    <div>
-        <h3>Punteggio</h3>
         <div class="flex">
             <button onclick="remove()"><i class="fa-solid fa-minus"></i></button>
             <h3 id="point">0</h3>
@@ -48,115 +31,144 @@
         <div class="content">
             <button class="submit" onclick="list()"><i class="fa-solid fa-xmark"></i></button>
             <h3>Scegli gli album</h3>
+            <div>
+                <button onclick="selectAll()">Seleziona tutti</button>
+                <button onclick="deselectAll()">Rimuovi tutti</button>
+            </div>
             <ul id="checkbox">
                 <li>
-                    <input type="checkbox">
-                    <h4>utopia</h4>
+                    <input type="checkbox" id="checkbox-1" checked>
+                    <label for="checkbox-1">utopia</label>
                 </li>
                 <li>
-                    <input type="checkbox">
-                    <h4>astroworld</h4>
+                    <input type="checkbox" id="checkbox-2" checked>
+                    <label for="checkbox-2">astroworld</label>
                 </li>
                 <li>
-                    <input type="checkbox">
-                    <h4>rodeo</h4>
+                    <input type="checkbox" id="checkbox-3" checked>
+                    <label for="checkbox-3">rodeo</label>
                 </li>
                 <li>
-                    <input type="checkbox">
-                    <h4>days before rodeo</h4>
+                    <input type="checkbox" id="checkbox-4" checked>
+                    <label for="checkbox-4">days before rodeo</label>
                 </li>
                 <li>
-                    <input type="checkbox">
-                    <h4>dystopia</h4>
+                    <input type="checkbox" id="checkbox-5" checked>
+                    <label for="checkbox-5">dystopia</label>
                 </li>
                 <li>
-                    <input type="checkbox">
-                    <h4>birbs in the trap sing mcknight</h4>
+                    <input type="checkbox" id="checkbox-6" checked>
+                    <label for="checkbox-6">birbs in the trap sing mcknight</label>
                 </li>
                 <li>
-                    <input type="checkbox">
-                    <h4>come over when your sober - pt 1</h4>
+                    <input type="checkbox" id="checkbox-7">
+                    <label for="checkbox-7">come over when your sober - pt1</label>
                 </li>
                 <li>
-                    <input type="checkbox">
-                    <h4>come over when your sober - pt 2</h4>
+                    <input type="checkbox" id="checkbox-8">
+                    <label for="checkbox-8">come over when your sober - pt2</label>
                 </li>
                 <li>
-                    <input type="checkbox">
-                    <h4>i am > i was</h4>
+                    <input type="checkbox" id="checkbox-9">
+                    <label for="checkbox-9">i am > i was</label>
                 </li>
                 <li>
-                    <input type="checkbox">
-                    <h4>we don't trust you</h4>
+                    <input type="checkbox" id="checkbox-10">
+                    <label for="checkbox-10">we don't trust you</label>
                 </li>
                 <li>
-                    <input type="checkbox">
-                    <h4>we still don't trust you</h4>
+                    <input type="checkbox" id="checkbox-11">
+                    <label for="checkbox-11">we still don't trust you</label>
                 </li>
                 <li>
-                    <input type="checkbox">
-                    <h4>17</h4>
+                    <input type="checkbox" id="checkbox-12">
+                    <label for="checkbox-12">17</label>
                 </li>
                 <li>
-                    <input type="checkbox">
-                    <h4>?</h4>
+                    <input type="checkbox" id="checkbox-13">
+                    <label for="checkbox-13">?</label>
                 </li>
                 <li>
-                    <input type="checkbox">
-                    <h4>goodbye & good riddance</h4>
+                    <input type="checkbox" id="checkbox-14">
+                    <label for="checkbox-14">goodbye & good riddance</label>
                 </li>
                 <li>
-                    <input type="checkbox">
-                    <h4>so much fun</h4>
+                    <input type="checkbox" id="checkbox-15">
+                    <label for="checkbox-15">so much fun</label>
                 </li>
                 <li>
-                    <input type="checkbox">
-                    <h4>so much fun - deluxe</h4>
+                    <input type="checkbox" id="checkbox-16">
+                    <label for="checkbox-16">so much fun - deluxe</label>
                 </li>
                 <li>
-                    <input type="checkbox">
-                    <h4>hereos & villans</h4>
+                    <input type="checkbox" id="checkbox-17">
+                    <label for="checkbox-17">heroes & villains</label>
                 </li>
                 <li>
-                    <input type="checkbox">
-                    <h4>damn.</h4>
+                    <input type="checkbox" id="checkbox-18">
+                    <label for="checkbox-18">damn.</label>
                 </li>
                 <li>
-                    <input type="checkbox">
-                    <h4>ultraviolence - deluxe</h4>
+                    <input type="checkbox" id="checkbox-19">
+                    <label for="checkbox-19">ultraviolence - deluxe</label>
                 </li>
                 <li>
-                    <input type="checkbox">
-                    <h4>did you know that there's a tunnel under the ocean blvd</h4>
+                    <input type="checkbox" id="checkbox-20">
+                    <label for="checkbox-20">did you know that there's...</label>
                 </li>
                 <li>
-                    <input type="checkbox">
-                    <h4>savage mode</h4>
+                    <input type="checkbox" id="checkbox-21">
+                    <label for="checkbox-21">savage mode</label>
                 </li>
                 <li>
-                    <input type="checkbox">
-                    <h4>savage mode II</h4>
+                    <input type="checkbox" id="checkbox-22">
+                    <label for="checkbox-22">savage mode II</label>
                 </li>
                 <li>
-                    <input type="checkbox">
-                    <h4>her loss</h4>
+                    <input type="checkbox" id="checkbox-23">
+                    <label for="checkbox-23">her loss</label>
                 </li>
                 <li>
-                    <input type="checkbox">
-                    <h4>american dream</h4>
+                    <input type="checkbox" id="checkbox-24">
+                    <label for="checkbox-24">american dream</label>
                 </li>
                 <li>
-                    <input type="checkbox">
-                    <h4>love sick</h4>
+                    <input type="checkbox" id="checkbox-25">
+                    <label for="checkbox-25">love sick</label>
                 </li>
                 <li>
-                    <input type="checkbox">
-                    <h4>hardstone psyco</h4>
+                    <input type="checkbox" id="checkbox-26">
+                    <label for="checkbox-26">hardstone psyco</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="checkbox-27">
+                    <label for="checkbox-27">DAMN.</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="checkbox-28">
+                    <label for="checkbox-28">CTRL</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="checkbox-29">
+                    <label for="checkbox-29">Death Race for Love</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="checkbox-30">
+                    <label for="checkbox-30">DIE LIT</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="checkbox-31">
+                    <label for="checkbox-31">GOOD KID, M.A.A.D CITY</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="checkbox-32">
+                    <label for="checkbox-32">TO PIMP A BUTTERFLY</label>
                 </li>
             </ul>
             <button class="submit" type="button" onclick="showSelectedAlbums()"><i class="fa-solid fa-check"></i></button>
         </div>
     </div>
+    <div id="select-container"></div>
     <div class="container"></div>
 </body>
 </html>
