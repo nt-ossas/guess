@@ -1,0 +1,16 @@
+{
+    "name": "Guess The Musical Album",
+    "short_name": "Guess The Album",
+    "start_url": ".",
+    "background_color": "#1E1E2C",
+    "theme_color": "#1E1E2C",
+    "description": "Indovina chi con gli album musicali.",
+    "display": "standalone",
+    "icons": [
+      {
+        "src": "img/logo.jpg",
+        "sizes": "5000x4999",
+        "type": "image/jpg"
+      }
+    ] 
+}
