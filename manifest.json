@@ -8,9 +8,9 @@
     "display": "standalone",
     "icons": [
       {
-        "src": "img/logo.jpg",
-        "sizes": "5000x4999",
-        "type": "image/jpg"
+        "src": "img/logo.png",
+        "sizes": "4999x4999",
+        "type": "image/png"
       }
     ] 
 }
