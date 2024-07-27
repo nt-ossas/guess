@@ -152,9 +152,29 @@ function remove() {
 
 function selectAll() {
     const checkboxes = document.querySelectorAll('#checkbox input[type="checkbox"]');
+    const its = document.querySelectorAll('.it #checkbox input[type="checkbox"]');
+    const ens = document.querySelectorAll('.en #checkbox input[type="checkbox"]');
+    const it = document.getElementById('it');
+    const en = document.getElementById('en');
+    
     checkboxes.forEach(checkbox => {
-        checkbox.checked = true;
+        if (en.classList.contains('online')) {
+            if (checkbox.closest('.en')) {
+                checkbox.checked = false;
+            } else {
+                checkbox.checked = true;
+            }
+        } else if (it.classList.contains('online')) {
+            if (checkbox.closest('.it')) {
+                checkbox.checked = false;
+            } else {
+                checkbox.checked = true;
+            }
+        } else {
+            checkbox.checked = true;
+        }
     });
+
     showSelectedAlbums();
 }
 
