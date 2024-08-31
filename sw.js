@@ -82,7 +82,7 @@ self.addEventListener("install", e => {
                 "./img/vultures.jpg",
                 "./img/donda.jpg",
                 "./img/i_never_liked_you.jpg",
-                "./img/huncho_jack_jack_huncho.jpg",
+                "./img/huncho_jack,_jack_huncho.jpg",
                 "./img/a_great_caos.jpg",
                 "./img/teen_x.jpg",
                 "./img/views.jpg",
