@@ -277,6 +277,14 @@ button, select {
     margin-left: .3em;
 }
 
+.not-selected{
+    color: var(--text-color);
+}
+
+.not-selected i{
+    display: none;
+}
+
 #select-container{
     display: flex;
     flex-direction: column;
@@ -300,4 +308,9 @@ button, select {
     background-color: var(--color-text);
     color: var(--color-accent);
     text-decoration:line-through;
+}
+
+.hide-button{
+    margin-top: 25px;
+    padding: 7.5px 10px;
 }
